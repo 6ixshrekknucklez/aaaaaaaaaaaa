@@ -1,17 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="hu">
 <head>
-<title>feladat</title>
-<style>
-body {
-background-color:wheat;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Színváltó</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s;
+        }
+        #color-picker {
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #change-color-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<h1>Ide kérem az elérhetőségeket: </h1>
-<h2>Csak a GitHubos lapok</h2>
-<ul>
-<li>Név és link ide!</li>
-</ul>
-</body>
-</html>
+    <h1>Színváltó</h1>
+    <select id="color-picker">
+        <option value="white">Fehér</option>
+        <option value="red">Piros</option>
+        <option value="green">Zöld</option>
+        <option value="blue">Kék</option>
+        <option value="yellow">Sárga</option>
+    </select>
+    <button id="change-color-button">Szín változtatása</button>
+    <script>
+        document.getElementById('change-color-button').addEventListener('click', function() {
+            var selectedColor = document.getElementById('color-picker').value;
+            document.body.style.backgroundColor = selectedColor;
+        });
+    </script>
